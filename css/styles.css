@@ -13,6 +13,11 @@
     --typo-light-sec: 244 244 253;
     --typo-dark-pr: 46 47 66;
     --typo-dark-sec: 67 68 85;
+
+    /* Others */
+      --items: 4;
+      --indent-col: 24px;
+      --indent-row: var(--indent-cal);
   }
 
 /* #endregion */
@@ -28,7 +33,18 @@
   ul,
   ol {
     list-style-type: none;
+    padding: 0;
     margin: 0;
+  }
+
+  h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 
   a {
@@ -46,6 +62,16 @@
 
 
 /* #region Common */
+  .section {
+    padding: 120px 0;
+  }
+  
+  .container {
+    width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
   .logo {
     font-family: Raleway, sans-serif;
     font-size: 18px;
@@ -65,6 +91,7 @@
   }
 
   .section-title {
+    margin-bottom: 72px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
@@ -74,11 +101,50 @@
     color: rgb(var(--typo-dark-pr));
   }
 
+    /* Card set */
+    .card-set {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: var(--indent-row);
+      column-gap: var(--indent-col);
+    }
+  
+    .card-set-item {
+      width: calc((100% - var(--indent-col) * (var(--items) - 1)) / var(--items));
+    }
+
 /* #endregion */
 
 
 /* #region Header */
+  .header {
+    border-bottom: 1px solid rgb(var(--cornflower));
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .nav-logo {
+    margin-right: 76px;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
   .nav-link {
+    display: block;
+    padding: 24px 0;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -88,6 +154,12 @@
   .nav-link:hover,
   .nav-link:focus {
     color: rgb(var(--ocean));
+  }
+
+  .contact-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
   }
 
   .contact-link {
@@ -110,9 +182,20 @@
 /* #region Hero */
   .hero {
     background-color: rgb(var(--navy-blue));
+    padding: 188px 0;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
   }
 
   .hero-title {
+    display: block;
+    max-width: 496px;
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
@@ -121,11 +204,13 @@
   }
 
   .btn {
+    padding: 16px 32px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
     background-color: rgb(var(--iris));
     color: rgb(var(--typo-light-pr));
+    border-radius: 4px;
   }
 
   .btn:hover,
@@ -136,7 +221,18 @@
 
 
 /* #region Advantages */
+  .adv-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .adv-item {
+    width: 264px;
+  }
+
   .adv-title {
+    margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -147,12 +243,13 @@
   .adv-text {
     line-height: 1.5;
     letter-spacing: 0.02em;
+    color: rgb(var(--typo-dark-sec));
   }
 /* #endregion */
 
 
 /* #region Team */
-  .section-team {
+  .team {
     background-color: rgb(var(--cloud));
   }
 
@@ -161,6 +258,7 @@
   }
 
   .team-name {
+    margin: 32px 16px 8px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -170,6 +268,7 @@
   }
 
   .team-role {
+    margin: 0 16px 32px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
@@ -179,7 +278,19 @@
 
 
 /* #region Portfolio */
-  .portfolio-work-title {
+  .portfolio-list {
+    --items: 3;
+    --indent-row: 48px;
+  }
+
+  .portfolio-work-description {
+    padding: 32px 16px;
+    border: 1px solid rgb(var(--cornflower));
+    border-top: none;
+  }
+
+.portfolio-work-title {
+    margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -197,9 +308,20 @@
 
 /* #region Footer */
   .footer {
+    padding: 100px;
     background-color: rgb(var(--navy-blue));
   }
 
+  
+  .footer-cta {
+    width: 294px;
+  }
+
+  .footer-logo {
+    display: block;
+    margin-bottom: 16px;
+  }
+  
   .footer-text {
     line-height: 1.5;
     letter-spacing: 0.02em;
