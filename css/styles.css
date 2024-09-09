@@ -204,12 +204,18 @@
   }
 
   .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 169px;
+    min-height: 56px;
     padding: 16px 32px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
     background-color: rgb(var(--iris));
     color: rgb(var(--typo-light-pr));
+    border: none;
     border-radius: 4px;
   }
 
@@ -229,6 +235,15 @@
 
   .adv-item {
     width: 264px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
   }
 
   .adv-title {
@@ -253,12 +268,21 @@
     background-color: rgb(var(--cloud));
   }
 
+  .team-list {
+    gap: 24px;
+  }
+
   .team-item {
+    border-radius: 0px 0px 4px 4px;
     background-color: rgb(var(--white));
   }
 
+  .team-item-desc {
+    padding: 32px 16px;
+  }
+
   .team-name {
-    margin: 32px 16px 8px;
+    margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -268,7 +292,6 @@
   }
 
   .team-role {
-    margin: 0 16px 32px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
@@ -308,21 +331,17 @@
 
 /* #region Footer */
   .footer {
-    padding: 100px;
+    padding: 100px 0;
     background-color: rgb(var(--navy-blue));
   }
 
-  
-  .footer-cta {
-    width: 294px;
-  }
-
   .footer-logo {
-    display: block;
+    display: inline-block;
     margin-bottom: 16px;
   }
   
   .footer-text {
+    max-width: 264px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: rgb(var(--typo-light-sec));
